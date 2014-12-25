@@ -36,6 +36,10 @@
    `(fringe ((t (:background ,current-line))))
    `(minibuffer-prompt ((t (:foreground ,blue))))
    `(mode-line ((t (:background ,current-line :foreground ,foreground))))
+   `(mode-line-inactive
+     ((t (:background ,current-line
+                      :foreground ,foreground
+                      :box (:line-width -1 :style released-button)))))
    `(region ((t (:background ,selection))))
    `(highlight ((t (:background ,selection))))
    `(success ((t (:foreground ,green :weight bold))))
