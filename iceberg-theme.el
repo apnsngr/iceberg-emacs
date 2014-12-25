@@ -37,13 +37,19 @@
    `(minibuffer-prompt ((t (:foreground ,blue))))
    `(mode-line ((t (:background ,current-line :foreground ,foreground))))
    `(region ((t (:background ,selection))))
+   `(highlight ((t (:background ,selection))))
+   `(success ((t (:foreground ,green :weight bold))))
+   `(warning ((t (:foreground ,red :weight bold))))
 
    ;; Font-lock
+   `(font-lock-builtin-face ((t (:foreground ,foreground :weight bold))))
    `(font-lock-comment-face ((t (:foreground ,comment))))
    `(font-lock-constant-face ((t (:foreground ,purple))))
+   `(font-lock-doc-face ((t (:foreground ,comment))))
    `(font-lock-doc-string-face ((t (:foreground ,comment))))
    `(font-lock-function-name-face ((t (:foreground ,orange))))
    `(font-lock-keyword-face ((t (:foreground ,blue))))
+   `(font-lock-preprocessor-face ((t (:foreground ,green))))
    `(font-lock-string-face ((t (:foreground ,cyan))))
    `(font-lock-type-face ((t (:foreground ,cyan))))
    `(font-lock-variable-name-face ((t (:foreground ,purple))))
@@ -82,14 +88,8 @@
 
   (custom-theme-set-variables
    'iceberg
-
-   `(ansi-color-names-vector
-     ;; black, red, green, yellow, blue, magenta, cyan, white
-     [,background ,red ,green ,orange ,blue ,purple ,cyan ,foreground])
-   `(ansi-term-color-vector
-     ;; black, red, green, yellow, blue, magenta, cyan, white
-     [,black ,background ,red ,green ,orange ,blue ,purple
-                  ,cyan ,foreground])))
+   ;; TODO ANSI colors
+   ))
 
 ;;;###autoload
 (and load-file-name
