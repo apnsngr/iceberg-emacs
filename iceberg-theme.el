@@ -70,6 +70,27 @@
 
    ;; Everything else (ordered by alphabetically)
 
+   ;; diff
+   `(diff-added ((,class (:foreground ,green :background nil))
+                 (t (:foreground ,green :background nil))))
+   `(diff-changed ((t (:foreground ,orange))))
+   `(diff-removed ((,class (:foreground ,red :background nil))
+                   (t (:foreground ,red :background nil))))
+   `(diff-refine-added ((t (:inherit diff-added :weight bold))))
+   `(diff-refine-change ((t (:inherit diff-changed :weight bold))))
+   `(diff-refine-removed ((t (:inherit diff-removed :weight bold))))
+   `(diff-header ((,class (:background ,current-line))
+                  (t (:background ,foreground :foreground ,background))))
+   `(diff-file-header
+     ((,class (:background ,current-line :foreground ,foreground :bold t))
+      (t (:background ,foreground :foreground ,background :bold t))))
+
+   ;; diff-hl
+   `(diff-hl-change ((,class (:foreground ,orange :background ,current-line))))
+   `(diff-hl-delete ((,class (:foreground ,red :background ,current-line))))
+   `(diff-hl-insert ((,class (:foreground ,green :background ,current-line))))
+   `(diff-hl-unknown ((,class (:foreground ,cyan :background ,current-line))))
+
    ;; hl-line-mode
    `(hl-line ((t (:background ,current-line))))
 
