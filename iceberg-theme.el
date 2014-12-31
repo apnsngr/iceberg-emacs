@@ -1,3 +1,5 @@
+;;; iceberg --- a dark blue theme
+;;; Commentary:
 ;; _________________________________________
 ;; \_ _/ ____| ____| ___ \ ____| ___ \  ___/
 ;;  | | |____| ____| ___ < ____| __  / |__ \
@@ -10,6 +12,8 @@
 ;; Colorscheme: cocopon <cocopon@me.com>
 ;; Port:        apnsngr <github.com/apnsngr>
 ;; License:     MIT
+
+;;; Code:
 
 (deftheme iceberg)
 
@@ -35,12 +39,14 @@
    `(default ((t (:background ,background :foreground ,foreground))))
    `(fringe ((t (:background ,current-line))))
    `(minibuffer-prompt ((t (:foreground ,blue))))
+   `(menu ((t (:foreground ,foreground :background ,background))))
    `(mode-line
      ((t (:background ,current-line
                       :foreground ,foreground
                       :box (:line-width -1 :style released-button)))))
    `(mode-line-inactive
      ((t (:background ,current-line :foreground ,foreground))))
+   `(mode-line-buffer-id ((t (:foreground ,cyan :weight bold))))
    `(region ((t (:background ,selection))))
    `(highlight ((t (:background ,selection))))
    `(success ((t (:foreground ,green :weight bold))))
@@ -49,6 +55,7 @@
    ;; Font-lock
    `(font-lock-builtin-face ((t (:foreground ,foreground :weight bold))))
    `(font-lock-comment-face ((t (:foreground ,comment))))
+   `(font-lock-comment-delimiter-face ((t :foreground ,comment)))
    `(font-lock-constant-face ((t (:foreground ,purple))))
    `(font-lock-doc-face ((t (:foreground ,comment))))
    `(font-lock-doc-string-face ((t (:foreground ,comment))))
@@ -59,6 +66,13 @@
    `(font-lock-type-face ((t (:foreground ,cyan))))
    `(font-lock-variable-name-face ((t (:foreground ,purple))))
    `(font-lock-warning-face ((t (:foreground ,red))))
+
+   ;; isearch
+   `(isearch ((t (:foreground ,foreground :weight bold
+                              :background ,selection))))
+   `(isearch-fail ((t (:foreground ,foreground :background ,red))))
+   `(lazy-highlight ((t (:foreground ,foreground :weight bold
+                                     :background ,current-line))))
 
    ;; hl-line-mode
    `(hl-line ((t (:background ,current-line))))
@@ -104,3 +118,4 @@
                 (file-name-directory load-file-name))))
 
 (provide-theme 'iceberg)
+;;; iceberg-theme.el ends here
