@@ -17,7 +17,8 @@
 
 (deftheme iceberg)
 
-(let ((background "#161822")
+(let ((class '((class color) (min-colors 89)))
+      (background "#161822")
       (current-line "#1E2132")
       (selection "#282D43")
       (foreground "#C7C9D1")
@@ -67,6 +68,11 @@
    `(font-lock-variable-name-face ((t (:foreground ,purple))))
    `(font-lock-warning-face ((t (:foreground ,red))))
 
+   ;; Everything else (ordered by alphabetically)
+
+   ;; hl-line-mode
+   `(hl-line ((t (:background ,current-line))))
+
    ;; isearch
    `(isearch ((t (:foreground ,foreground :weight bold
                               :background ,selection))))
@@ -74,11 +80,8 @@
    `(lazy-highlight ((t (:foreground ,foreground :weight bold
                                      :background ,current-line))))
 
-   ;; hl-line-mode
-   `(hl-line ((t (:background ,current-line))))
-
    ;; linum-mode
-   `(linum ((t (:background ,current-line :foreground ,foreground))))
+   `(linum ((t (:foreground ,line-number-fg :background ,current-line))))
 
    ;; org-mode
    `(org-date ((t (:foreground ,purple))))
@@ -86,10 +89,6 @@
    `(org-hide ((t (:foreground ,current-line))))
    `(org-link ((t (:foreground ,blue))))
    `(org-todo ((t (:foreground ,red))))
-
-   ;; show-paren-mode
-   `(show-paren-match ((t (:background ,blue :foreground ,current-line))))
-   `(show-paren-mismatch ((t (:background ,orange :foreground ,current-line))))
 
    ;; rainbow-delimiters
    `(rainbow-delimiters-depth-1-face ((t (:foreground ,purple))))
@@ -102,13 +101,17 @@
    `(rainbow-delimiters-depth-8-face ((t (:foreground ,line-number-fg))))
    `(rainbow-delimiters-depth-9-face ((t (:foreground ,foreground))))
 
-   ;; linum-mode
-   `(linum ((t (:foreground ,line-number-fg :background ,current-line)))))
+   ;; show-paren-mode
+   `(show-paren-match ((t (:background ,blue :foreground ,current-line))))
+   `(show-paren-mismatch ((t (:background ,orange :foreground ,current-line))))
+
+   )
 
   (custom-theme-set-variables
    'iceberg
    ;; TODO ANSI colors
-   ))
+   )
+  )
 
 ;;;###autoload
 (and load-file-name
