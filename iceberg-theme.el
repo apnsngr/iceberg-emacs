@@ -91,6 +91,23 @@
    `(diff-hl-insert ((,class (:foreground ,green :background ,current-line))))
    `(diff-hl-unknown ((,class (:foreground ,cyan :background ,current-line))))
 
+   ;; flycheck
+   `(flycheck-error
+     ((((supports :underline (:style wave)))
+       (:underline (:style wave :color ,red) :inherit unspecified))
+      (t (:foreground ,red :weight bold :underline t))))
+   `(flycheck-warning
+     ((((supports :underline (:style wave)))
+       (:underline (:style wave :color ,orange) :inherit unspecified))
+      (t (:foreground ,orange :weight bold :underline t))))
+   `(flycheck-info
+     ((((supports :underline (:style wave)))
+       (:underline (:style wave :color ,blue) :inherit unspecified))
+      (t (:foreground ,blue :weight bold :underline t))))
+   `(flycheck-fringe-error ((t (:foreground ,red :weight bold))))
+   `(flycheck-fringe-warning ((t (:foreground ,orange :weight bold))))
+   `(flycheck-fringe-info ((t (:foreground ,blue :weight bold))))
+
    ;; hl-line-mode
    `(hl-line ((t (:background ,current-line))))
 
