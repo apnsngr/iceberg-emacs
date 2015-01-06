@@ -17,7 +17,8 @@
 
 (deftheme iceberg)
 
-(let ((class '((class color) (min-colors 89)))
+(let
+    ((class '((class color) (min-colors 89)))
       (background "#161822")
       (current-line "#1E2132")
       (selection "#282D43")
@@ -127,11 +128,43 @@
    `(linum ((t (:foreground ,line-number-fg :background ,current-line))))
 
    ;; org-mode
+   `(org-agenda-date-today
+     ((t (:foreground ,foreground :slant italic :weight bold))) t)
+   `(org-agenda-structure
+     ((t (:inherit font-lock-comment-face))))
+   `(org-archived ((t (:foreground ,foreground :weight bold))))
+   `(org-checkbox ((t (:background ,background :foreground ,foreground
+                                   :box (:line-width 1 :style released-button)))))
    `(org-date ((t (:foreground ,purple))))
+   `(org-deadline-announce ((t (:foreground ,red))))
    `(org-done ((t (:foreground ,green))))
-   `(org-hide ((t (:foreground ,current-line))))
-   `(org-link ((t (:foreground ,blue))))
-   `(org-todo ((t (:foreground ,red))))
+   `(org-formula ((t (:foreground ,orange))))
+   `(org-headline-done ((t (:foreground ,green))))
+   `(org-hide ((t (:foreground ,comment))))
+   `(org-level-1 ((t (:foreground ,blue))))
+   `(org-level-2 ((t (:foreground ,purple))))
+   `(org-level-3 ((t (:foreground ,cyan))))
+   `(org-level-4 ((t (:foreground ,green))))
+   `(org-level-5 ((t (:foreground ,red))))
+   `(org-level-6 ((t (:foreground ,orange))))
+   `(org-level-7 ((t (:foreground ,comment))))
+   `(org-level-8 ((t (:foreground ,foreground))))
+   `(org-link ((t (:foreground ,cyan))))
+   `(org-scheduled ((t (:foreground ,green))))
+   `(org-scheduled-previously ((t (:foreground ,red))))
+   `(org-scheduled-today ((t (:foreground ,blue))))
+   `(org-sexp-date ((t (:foreground ,blue :underline t))))
+   `(org-special-keyword ((t (:inherit font-lock-comment-face))))
+   `(org-table ((t (:foreground ,blue))))
+   `(org-tag ((t (:bold t :weight bold))))
+   `(org-time-grid ((t (:foreground ,blue))))
+   `(org-todo ((t (:bold t :foreground ,cyan :weight bold))))
+   `(org-upcoming-deadline ((t (:inherit font-lock-keyword-face))))
+   `(org-warning ((t (:bold t :foreground ,orange :weight bold :underline nil))))
+   `(org-column ((t (:background ,current-line))))
+   `(org-column-title ((t (:background ,background :underline t :weight bold))))
+   `(org-mode-line-clock-overrun ((t (:foreground ,background :background ,red))))
+   `(org-footnote ((t (:foreground ,cyan :underline t))))
 
    ;; rainbow-delimiters
    `(rainbow-delimiters-depth-1-face ((t (:foreground ,purple))))
@@ -153,8 +186,7 @@
   (custom-theme-set-variables
    'iceberg
    ;; TODO ANSI colors
-   )
-  )
+   ))
 
 ;;;###autoload
 (and load-file-name
