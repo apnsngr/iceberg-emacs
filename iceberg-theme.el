@@ -12,6 +12,9 @@
 ;; Colorscheme: cocopon <cocopon@me.com>
 ;; Port:        apnsngr <github.com/apnsngr>
 ;; License:     MIT
+;;
+;; Special thanks to Bozhidar Batsov (bbatsov).  I used his zenburn Emacs theme
+;; as a guide for this theme.
 
 ;;; Code:
 
