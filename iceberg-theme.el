@@ -111,6 +111,11 @@
    ;; hl-line-mode
    `(hl-line ((t (:background ,current-line))))
 
+   ;; ido-mode
+   `(do-first-match ((t (:foreground ,blue :weight bold))))
+   `(ido-only-match ((t (:foreground ,green :weight bold))))
+   `(ido-subdir ((t (:foreground ,cyan))))
+
    ;; isearch
    `(isearch ((t (:foreground ,foreground :weight bold
                               :background ,selection))))
